@@ -33,6 +33,9 @@ function createThumbnails() {
     let imageElement = document.createElement("img");
     console.log("current image is", image);
     imageElement.src = image.src;
+    imageElement.srcset = image.srcset;
+    imageElement.alt = image.alt;
+    imageElement.sizes = "500px";
     imageElement.addEventListener("click", function () {
       console.log(image);
       createBigImage(image);
@@ -42,3 +45,13 @@ function createThumbnails() {
 }
 
 createThumbnails();
+
+function createBigImage(imgDetails) {
+  imageContainer.innerHTML = "";
+  const bigImage = document.createElement("img");
+  bigImage.src = imgDetails.src;
+  bigImage.alt = imgDetails.alt;
+  imageContainer.appendChild(bigImage);
+}
+//the images are on and the click event is working ok...
+//look at the CSS for changing the size of the image...
