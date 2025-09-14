@@ -2,6 +2,9 @@ console.log("Hey!");
 
 const thumbnails = document.getElementById("thumbnails");
 const imageContainer = document.getElementById("imageContainer");
+const buttonRight = document.getElementById("right");
+const buttonLeft = document.getElementById("left");
+let currentIndex = 0;
 
 const images = [
   {
@@ -31,6 +34,11 @@ const images = [
     alt: "Foggy scene of the city",
     srcset: "./images/foggy-day-1000.webp, ./images/foggy-day-500.webp",
   },
+  {
+    src: "./images/dark-room-1920.webp",
+    alt: "A gloomy abandoned room",
+    srcset: "./images/dark-room-1000.webp, ./images/dark-room-500.webp",
+  },
 ];
 
 function createThumbnails() {
@@ -58,5 +66,33 @@ function createBigImage(imgDetails) {
   bigImage.alt = imgDetails.alt;
   imageContainer.appendChild(bigImage);
 }
-//the images are on and the click event is working ok...
-//look at the CSS for changing the size of the image...
+
+function imageRight() {
+  console.log("image right");
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
+  createBigImage(images[currentIndex]);
+}
+buttonRight.addEventListener("click", imageRight);
+
+function imageLeft() {
+  console.log("image left");
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = images.length - 1;
+  }
+  createBigImage(images[currentIndex]);
+}
+buttonLeft.addEventListener("click", imageLeft);
+
+createBigImage(images[currentIndex]);
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "ArrowRight") {
+    imageRight();
+  } else if (event.key === "ArrowLeft") {
+    imageLeft();
+  }
+});

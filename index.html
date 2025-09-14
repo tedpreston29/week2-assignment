@@ -5,14 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <head>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      />
+    </head>
+
     <title>Document</title>
   </head>
   <body>
     <div id="thumbnails" class="thumbnails"></div>
     <div id="imageContainer" class="imageContainer"></div>
     <div>
-      <button id="right">></button>
-      <button id="left"><</button>
+      <button id="right" aria-label="Next Image">
+        <i class="fas fa-angle-double-right"></i>
+      </button>
+      <button id="left" aria-label="Previous Image">
+        <i class="fas fa-angle-double-left"></i>
+      </button>
     </div>
   </body>
 </html>
