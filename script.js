@@ -26,6 +26,11 @@ const images = [
     srcset:
       "./images/skyscraper-1000.webp 1000w, ./images/skyscraper-500.webp 500w",
   },
+  {
+    src: "./images/Foggy-day.webp",
+    alt: "Foggy scene of the city",
+    srcset: "./images/foggy-day-1000.webp, ./images/foggy-day-500.webp",
+  },
 ];
 
 function createThumbnails() {

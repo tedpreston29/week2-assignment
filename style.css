@@ -1,32 +1,32 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  display: grid;
-  grid-template-rows: 1fr auto;
   margin: 0;
-  height: 100vh;
   background-color: #0a0a0f;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .thumbnails {
+  height: 80px;
+  width: 30%;
   position: absolute;
-  display: grid;
-  grid-auto-flow: column;
-  height: auto;
-  width: auto;
-  background: rgba(20, 20, 40, 0.8);
-  overflow: scroll;
-  gap: 10px;
+  display: flex;
+  align-items: center;
+  left: 35%;
+  bottom: 5vh;
+  background: rgba(0, 0, 0, 0.5);
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 5px;
   z-index: 1;
+  color-scheme: dark;
 }
 
 .thumbnails > img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
+  display: flex;
+  max-height: 80px;
+  max-width: auto;
+  object-fit: cover;
   cursor: pointer;
 }
 
@@ -35,7 +35,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .imageContainer img {
@@ -44,4 +43,4 @@ body {
   object-fit: contain;
 }
 
-/* need to figure out positioning of thumbnails and images */
+/* need to figure out positioning of thumbnails and images... images... nearly there, just need to make main images*/
